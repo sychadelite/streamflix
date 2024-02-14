@@ -41,6 +41,11 @@ class Most_watched extends CI_Controller
     $config['use_page_numbers'] = TRUE;
     $config['page_query_string'] = TRUE;
 
+    $config['cur_tag_open'] = '<li class="active"><a href="#">';
+    $config['cur_tag_close'] = '</a></li>';
+    $config['num_tag_open'] = '<li>';
+    $config['num_tag_close'] = '</li>';
+
     $this->pagination->initialize($config);
 
     $page = html_escape($this->input->get('per_page')) ?? "1";
@@ -48,7 +53,7 @@ class Most_watched extends CI_Controller
     $limit = $config['per_page'];
     $offset = ($page - 1) * $config['per_page'];
 
-    $data["content"]["most_watched"]["links"] = $this->pagination->create_links();
+    $data["content"]["most_watched"]["links"] = '<ul class="pagination">' . $this->pagination->create_links() . '</ul>';
 
     $data["content"]["most_watched"]["data"] = $this->most_watched_model->getAll($limit, $offset);
 

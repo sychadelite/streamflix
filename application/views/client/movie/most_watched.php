@@ -18,20 +18,18 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
             </h4>
           </div>
         </div>
-        <div>
+        <div class="substance-body">
           <div class="substance-title">
             <h1 class="fs-4 fw-bold">
               New Release
             </h1>
           </div>
-          <div class="substance-movie-list" >
+          <div class="substance-movie-list">
             <?php foreach ($content["most_watched"]["data"] as $index => $row) { ?>
-              <a href="<?= base_url("client/movie/stream/" . $row->content_id) ?>" style="all: unset;">
+              <a href="<?= base_url("client/movie/stream/" . $row->content_id) ?>">
                 <div class="movie-card">
-                  <div class="position-relative">
-                    <div class="cover">
-                      <img src="<?= base_url($row->cover_image) ?>" alt="">
-                    </div>
+                  <div class="cover">
+                    <img src="<?= base_url($row->cover_image) ?>" alt="" />
                     <div class="detail">
                       <div class="play-icon">
                         <i class="far fa-play-circle"></i>
@@ -45,14 +43,14 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
                     </div>
                   </div>
                   <div class="info">
-                    <small><span class="moment-parse" data-moment-time="<?= $row->release_year ?>">N/A</span> / <?= $row->content_type ?></small>
+                    <small><span class="moment-parse" data-moment-time="<?= $row->release_year ?>">N/A</span> / <?= formatColumnName($row->content_type) ?></small>
                     <h3 class="fs-5 fw-semibold text-truncate"><?= $row->title ?></h3>
                   </div>
                 </div>
               </a>
             <?php } ?>
           </div>
-          <div class="d-flex flex-nowrap justify-content-center align-items-center" style="gap: 2rem;">
+          <div>
             <?= $content["most_watched"]["links"] ?>
           </div>
           <div class="text-center mt-5">
