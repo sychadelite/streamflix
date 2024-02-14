@@ -37,7 +37,7 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
                       <div class="chip">
                         <p>
                           <i class="fas fa-star"></i>
-                          7.5
+                          <?= $row->rating ?>
                         </p>
                       </div>
                     </div>

@@ -3,6 +3,7 @@
 class Most_watched_model extends CI_Model
 {
   private $_table = "content";
+  private $_table_reviews = "reviews";
 
   // fields
   public $content_id;
@@ -155,7 +156,23 @@ class Most_watched_model extends CI_Model
 
   public function getAll($limit = 5, $start = 0)
   {
-    $this->db->where('content_type', 'movie');
+    $columns = array_merge($this->_column_order, [
+      '
+        CASE 
+          WHEN COUNT(r.content_id) > 0 
+            THEN 
+              ROUND(LEAST(10, SUM(CASE WHEN r.rating >= 1 THEN r.rating ELSE 0 END) / COUNT(r.content_id)), 2)
+            ELSE 
+              0 
+        END AS rating
+      '
+    ]);
+
+    $this->db->select($columns);
+    $this->db->from($this->_table . ' mw');
+    $this->db->join($this->_table_reviews . ' r', 'r.content_id=mw.content_id', 'left');
+    $this->db->where('mw.content_type', 'movie');
+    $this->db->group_by($this->_column_order);
     $this->db->limit($limit, $start);
     $query = $this->db->get($this->_table);
 
