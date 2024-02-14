@@ -65,7 +65,7 @@ class Subscription_plan_model extends CI_Model
           [
             'field' => 'description',
             'label' => 'Description',
-            'rules' => 'trim|max_length[255]'
+            'rules' => 'trim'
           ]
         ];
         break;
@@ -100,7 +100,7 @@ class Subscription_plan_model extends CI_Model
           [
             'field' => 'description',
             'label' => 'Description',
-            'rules' => 'trim|max_length[255]'
+            'rules' => 'trim'
           ]
         ];
         break;

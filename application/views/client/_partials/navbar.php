@@ -71,7 +71,7 @@
                 </a>
               <?php } else { ?>
                 <?php if ($auth["current_user"]->role == 1) : ?>
-                  <a href="<?= base_url("admin/user") ?>">
+                  <a href="<?= base_url("admin/dashboard") ?>">
                     <button class="admin">Admin</button>
                   </a>
                 <?php endif; ?>

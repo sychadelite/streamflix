@@ -69,7 +69,7 @@ class Movie_model extends CI_Model
           [
             'field' => 'description',
             'label' => 'Description',
-            'rules' => 'trim|max_length[255]'
+            'rules' => 'trim'
           ],
           [
             'field' => 'cast[]',
@@ -114,7 +114,7 @@ class Movie_model extends CI_Model
           [
             'field' => 'description',
             'label' => 'Description',
-            'rules' => 'trim|max_length[255]'
+            'rules' => 'trim'
           ],
           [
             'field' => 'cast[]',
