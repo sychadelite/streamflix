@@ -151,7 +151,10 @@ class Most_watched_model extends CI_Model
 
   public function get_count()
   {
-    return $this->db->count_all($this->_table);
+    $this->db->where('content_type', 'series');
+    $this->db->or_where('content_type', 'tv_show');
+    $this->db->from($this->_table);
+    return $this->db->count_all_results();
   }
 
   public function getAll($limit = 5, $start = 0)
