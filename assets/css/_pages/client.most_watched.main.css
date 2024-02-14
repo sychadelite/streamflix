@@ -18,13 +18,40 @@ section .explore .content {
   color: white;
 }
 
+section .explore .content .substance-header .alert {
+  background-color: #1c1c1b;
+  border-radius: 4px;
+  padding: 13px 16px;
+}
+section .explore .content .substance-header .alert a {
+  color: #e50914;
+  text-decoration: none;
+}
+section .explore .content .substance-header .alert a:hover {
+  color: #ab060e;
+}
+section .explore .content .substance-header .alert h4 {
+  text-align: center;
+  line-height: 35px;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+section .explore .content .substance-movie-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 3rem auto 4rem;
+  gap: 1rem;
+}
+
 .movie-card {
   max-width: 185px;
 }
 
-.movie-card:hover img {
+.movie-card > div:first-child:hover img {
   transform: scale(1.25);
-  transition: all .5s ease-in-out;
+  transition: all .3s ease-in-out;
+  filter: blur(2px) brightness(0.25);
 }
 
 .movie-card .cover {
@@ -37,7 +64,10 @@ section .explore .content {
   background-color: rgb(180, 180, 180);
   cursor: pointer;
   overflow: hidden;
-  box-shadow: rgb(165 127 52) 0px 50px 100px -20px, rgb(249 191 75) 0px 30px 60px -30px, rgb(69 55 28) 0px -2px 6px 0px inset;
+  box-shadow:
+    0 0 2px 2px #dee2e6,
+    0 0 25px 0px #e29700,
+    0 0 30px 0px #0d6efd;
 }
 
 .movie-card .cover img {
@@ -57,6 +87,23 @@ section .explore .content {
   height: inherit;
 }
 
+.movie-card .detail .play-icon {
+  position: absolute;
+  top: 5rem;
+  left: 3.4rem;
+  font-size: 5rem;
+  color: #b8b8b8;
+  opacity: 0;
+  transform: scale(1.5);
+  pointer-events: none;
+  transition: all .6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.movie-card > div:first-child:hover .detail .play-icon {
+  opacity: 1;
+  transform: scale(.75);
+  transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
 .movie-card .detail p {
   margin-bottom: 0;
   text-align: center;
@@ -68,8 +115,8 @@ section .explore .content {
   bottom: -18rem;
   right: -1rem;
   width: 100%;
-  max-width: 4rem;
-  font-size: 17px;
+  max-width: 3.25rem;
+  font-size: 12px;
   font-weight: 600;
   padding: .25rem;
   border-radius: 20px;
@@ -99,6 +146,7 @@ section .explore .content {
   box-shadow: 0px 10px 15px -3px #d5586c;
   transition: all ease-in-out .4s;
 }
+
 .btn-discover:hover {
   background-color: #a4384a;
   transition: all ease-in-out .4s;

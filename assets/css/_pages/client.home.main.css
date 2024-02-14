@@ -4,13 +4,8 @@ section>div {
   color: white;
 }
 
-section .hero {
-  position: relative;
-  width: 100%;
-  min-height: 90vh;
-  background-image: url('/assets/img/background/ID-en-20240205-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
-  background-position: center top;
-  background-size: cover;
+section .hero .content {
+  padding-top: 20vh;
 }
 
 section .hero .content .search-box {

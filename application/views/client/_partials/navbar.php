@@ -24,7 +24,7 @@
               Movie
             </a>
             <ul class="dropdown">
-              <li><a href="<?= base_url("client/movie/most_watched")?>"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
+              <li><a href="<?= base_url("client/movie/most_watched") ?>"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>Quality</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>IMAX</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>Marvel Cinematic Universe</a></li>
@@ -70,6 +70,11 @@
                   <button class="register">Register</button>
                 </a>
               <?php } else { ?>
+                <?php if ($auth["current_user"]->role == 1) : ?>
+                  <a href="<?= base_url("admin/user") ?>">
+                    <button class="admin">Admin</button>
+                  </a>
+                <?php endif; ?>
                 <a href="<?= base_url("client/auth/logout") ?>">
                   <button class="logout">Logout</button>
                 </a>

@@ -61,7 +61,7 @@
               <div class="info">
                 <h5>
                   New to <?= SITE_NAME ?>?
-                  <a class="text-white" href="<?= base_url("client/auth/register") ?>">
+                  <a class="text-white" href="<?= base_url("client/auth/login") ?>">
                     <span class="link text-white">Sign in now.</span>
                   </a>
                 </h5>
@@ -113,9 +113,6 @@
 
     <?php if ($this->session->flashdata('message_validation_error')) : ?>
       toastr.error('<?= $this->session->flashdata("message_validation_error") ?>');
-    <?php endif; ?>
-    <?php if ($this->session->flashdata('message_register_success')) : ?>
-      toastr.success('<?= $this->session->flashdata("message_register_success") ?>');
     <?php endif; ?>
     <?php if ($this->session->flashdata('message_register_error')) : ?>
       toastr.error('<?= $this->session->flashdata("message_register_error") ?>');

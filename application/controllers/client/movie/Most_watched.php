@@ -25,9 +25,6 @@ class Most_watched extends CI_Controller
     parent::__construct();
 
     $this->load->model('client/auth_model');
-    if (!$this->auth_model->current_user()) :
-      return redirect('client/auth/login');
-    endif;
 
     $this->load->model($this->_path_prefix . $this->_context . '_model');
 
@@ -38,38 +35,22 @@ class Most_watched extends CI_Controller
   {
     $data = $this->page_meta_data();
 
-    $config["base_url"] = base_url("client/movie/most_watched/page");
-    $config["total_rows"] = $this->most_watched_model->get_count();
-    $config["per_page"] = 5;
+    $config['base_url'] = base_url("client/movie/most_watched");
+    $config['total_rows'] = $this->most_watched_model->get_count();
+    $config['per_page'] = 12;
+    $config['use_page_numbers'] = TRUE;
+    $config['page_query_string'] = TRUE;
 
     $this->pagination->initialize($config);
 
-    $page = 0;
+    $page = html_escape($this->input->get('per_page')) ?? "1";
+
+    $limit = $config['per_page'];
+    $offset = ($page - 1) * $config['per_page'];
 
     $data["content"]["most_watched"]["links"] = $this->pagination->create_links();
 
-    $data["content"]["most_watched"]["data"] = $this->most_watched_model->getAll($config["per_page"], $page);
-
-    return $this->load->view($data["layout"], $data);
-  }
-
-  public function page($slug = 0) {
-    if (!is_numeric($slug) || !$slug) return redirect("client/movie/most_watched");
-
-    $data = $this->page_meta_data();
-
-    $config["base_url"] = base_url("client/movie/most_watched/page");
-    $config["total_rows"] = $this->most_watched_model->get_count();
-    $config["per_page"] = $slug;
-    $config["uri_segment"] = 5;
-
-    $this->pagination->initialize($config);
-
-    $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-
-    $data["content"]["most_watched"]["links"] = $this->pagination->create_links();
-
-    $data["content"]["most_watched"]["data"] = $this->most_watched_model->getAll($config["per_page"], $page);
+    $data["content"]["most_watched"]["data"] = $this->most_watched_model->getAll($limit, $offset);
 
     return $this->load->view($data["layout"], $data);
   }

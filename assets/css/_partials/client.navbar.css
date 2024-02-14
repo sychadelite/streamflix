@@ -544,6 +544,11 @@
   transition: 0.4s;
 }
 
+.nav div.main_list button.admin {
+  color: white;
+  background-color: #046b93;
+}
+
 .nav div.main_list button.register {
   color: white;
   background-color: #e29700;

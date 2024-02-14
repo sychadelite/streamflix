@@ -18,11 +18,6 @@ section .hero .header {
   height: 90px;
 }
 
-section .hero .content {
-  position: relative;
-  width: 100%;
-}
-
 /* FORM */
 .form-wrapper {
   display: flex;
