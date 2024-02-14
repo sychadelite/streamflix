@@ -17,7 +17,7 @@ class Most_watched extends CI_Controller
 
   private $_table = 'content';
   private $_context = 'most_watched';
-  private $_path_prefix = 'client/movie/';
+  private $_path_prefix = 'client/tv_series/';
   private $_file = [];
 
   public function __construct()
@@ -35,7 +35,7 @@ class Most_watched extends CI_Controller
   {
     $data = $this->page_meta_data();
 
-    $config['base_url'] = base_url("client/movie/most_watched");
+    $config['base_url'] = base_url("client/tv_series/most_watched");
     $config['total_rows'] = $this->most_watched_model->get_count();
     $config['per_page'] = 12;
     $config['use_page_numbers'] = TRUE;

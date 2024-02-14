@@ -6,6 +6,10 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+.wrapper {
+  background-color: black;
+}
+
 /* General Section */
 section {
   background-color: black;
@@ -106,5 +110,11 @@ section>div {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   section#home>div {
     padding-top: 9rem;
+  }
+}
+
+@media screen and (min-height: 2000px) {
+  .wrapper {
+    min-height: 100vh;
   }
 }

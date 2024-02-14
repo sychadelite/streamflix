@@ -3,7 +3,7 @@ $url_parts = parse_url(current_url());
 $current_domain = str_replace('www.', '', $url_parts['host']);
 ?>
 
-<section id="movie_most_watched">
+<section id="tv_series_most_watched">
   <div class="explore">
     <div class="overlay"></div>
     <div class="container m-auto">
@@ -27,7 +27,7 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
           <div class="substance-movie-list">
             <?php foreach ($content["most_watched"]["data"] as $index => $row) { ?>
               <div class="pack">
-                <a href="<?= base_url("client/movie/stream/" . $row->content_id) ?>">
+                <a href="<?= base_url("client/tv_series/stream/" . $row->content_id) ?>">
                   <div class="movie-card">
                     <div class="cover">
                       <img src="<?= base_url($row->cover_image) ?>" alt="" />

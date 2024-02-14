@@ -37,7 +37,7 @@
               Tv Series
             </a>
             <ul class="dropdown">
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
+              <li><a href="<?= base_url("client/tv_series/most_watched") ?>"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>Marvel studio series</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>Amazon prime</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>Apple TV+ series</a></li>

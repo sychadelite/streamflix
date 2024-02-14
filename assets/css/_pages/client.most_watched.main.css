@@ -41,18 +41,25 @@ section .explore .content .substance-header .alert h4 {
   font-size: 14px;
 }
 
+section .explore .content .substance-body {
+  padding: 0 1rem;
+}
+
 section .explore .content .substance-movie-list {
   display: flex;
   justify-content: space-between;
   flex-flow: wrap;
   margin: 3rem auto 4rem;
   column-gap: 1rem;
-  row-gap: 2rem;
+  row-gap: 2.5rem;
 }
 
-section .explore .content .substance-movie-list a {
+section .explore .content .substance-movie-list .pack {
   flex-grow: 1;
   flex-basis: 185px;
+}
+
+section .explore .content .substance-movie-list .pack a {
   text-decoration: none;
   color: white;
 }
@@ -147,7 +154,6 @@ section .explore .content .pagination .active a {
 
 .movie-card .cover img {
   width: 100%;
-  min-width: 185px;
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
@@ -238,9 +244,21 @@ section .explore .content .pagination .active a {
 @media screen and (max-width: 768px) {}
 
 @media screen and (max-width: 420px) {
-  section .explore .content .substance-movie-list a {
-    flex-basis: 100%;
+  section .explore .content .substance-movie-list {
+    column-gap: 2.75rem;
+  }
+
+  section .explore .content .substance-movie-list .pack {
+    flex-basis: 30%;
+  }
+
+  .movie-card .cover {
+    height: 220px;
   }
 }
 
-@media screen and (max-width: 360px) {}
+@media screen and (max-width: 360px) {
+  section .explore .content .substance-movie-list .pack {
+    flex-basis: 100%;
+  }
+}
