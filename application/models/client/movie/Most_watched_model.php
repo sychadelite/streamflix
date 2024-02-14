@@ -155,6 +155,7 @@ class Most_watched_model extends CI_Model
 
   public function getAll($limit = 5, $start = 0)
   {
+    $this->db->where('content_type', 'movie');
     $this->db->limit($limit, $start);
     $query = $this->db->get($this->_table);
 
