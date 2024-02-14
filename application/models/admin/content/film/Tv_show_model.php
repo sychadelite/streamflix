@@ -229,7 +229,14 @@ class Tv_show_model extends CI_Model
       'ts.title',
       'ts.release_year',
       'ts.duration',
-      'ts.description',
+      'CASE 
+        WHEN 
+            CHAR_LENGTH(ts.description) > 50 
+        THEN 
+            CONCAT(LEFT(ts.description, LOCATE(" ", ts.description, 50)), "...") 
+        ELSE 
+            ts.description 
+        END AS description',
       'ts.cast',
       'ts.cover_image',
       'ts.content_type',

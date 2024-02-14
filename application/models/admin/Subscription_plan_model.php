@@ -192,7 +192,14 @@ class Subscription_plan_model extends CI_Model
       'sp.price',
       'sp.concurrent_streams',
       'sp.content_resolution',
-      'sp.description'
+      'CASE 
+        WHEN 
+            CHAR_LENGTH(sp.description) > 50 
+        THEN 
+            CONCAT(LEFT(sp.description, LOCATE(" ", sp.description, 50)), "...") 
+        ELSE 
+            sp.description 
+        END AS description',
     ], FALSE);
     $this->db->from($this->_table . ' sp');
     $i = 0;

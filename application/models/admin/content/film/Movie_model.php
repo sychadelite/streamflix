@@ -229,7 +229,14 @@ class Movie_model extends CI_Model
       'm.title',
       'm.release_year',
       'm.duration',
-      'm.description',
+      'CASE 
+        WHEN 
+            CHAR_LENGTH(m.description) > 50 
+        THEN 
+            CONCAT(LEFT(m.description, LOCATE(" ", m.description, 50)), "...") 
+        ELSE 
+            m.description 
+        END AS description',
       'm.cast',
       'm.cover_image',
       'm.content_type',

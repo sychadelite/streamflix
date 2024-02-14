@@ -229,7 +229,14 @@ class Series_model extends CI_Model
       's.title',
       's.release_year',
       's.duration',
-      's.description',
+      'CASE 
+        WHEN 
+            CHAR_LENGTH(s.description) > 50 
+        THEN 
+            CONCAT(LEFT(s.description, LOCATE(" ", s.description, 50)), "...") 
+        ELSE 
+            s.description 
+        END AS description',
       's.cast',
       's.cover_image',
       's.content_type',
