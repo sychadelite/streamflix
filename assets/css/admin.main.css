@@ -1,0 +1,6 @@
+.sidebar-collapse .form-control-sidebar, 
+.sidebar-collapse .form-control-sidebar~.input-group-append, 
+.sidebar-collapse .sidebar-search-results,
+.sidebar-collapse .hide-on-collapse {
+  display: none;
+}

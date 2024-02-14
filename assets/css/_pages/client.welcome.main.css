@@ -1,0 +1,194 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: rgba(252, 253, 255, 0.937);
+  font-family: "Roboto", sans-serif;
+  background-color: #080808 !important;
+  padding: 2rem 1rem;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  gap: 20px;
+}
+
+small {
+  font-size: 16px;
+  color: rgb(91, 90, 85);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -2px;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.section-btns {
+  display: inline-flex;
+  padding: 10px 20px;
+  background: white;
+  color: #000;
+  border-radius: 18px;
+  gap: 10px;
+  text-wrap: nowrap;
+}
+
+.section-btns.right {
+  background: transparent;
+  color: white;
+}
+
+input {
+  border-radius: 14px;
+  height: 40px;
+  background: rgba(83, 83, 83, 0.2);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  color: rgb(101, 101, 101);
+  display: inline-flex;
+  width: 100%;
+  max-width: 200px;
+  align-items: center;
+  padding: 0 15px;
+  transition: 0.5s all ease;
+  box-shadow: none;
+  border: none;
+}
+
+input:hover {
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Glowing Button */
+.GlowingButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100%;
+  max-width: 160px;
+}
+
+.GlowingButton__overlay {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 14px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.GlowingButton__glowWrap {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 65.93%;
+  height: 86.36%;
+}
+
+.GlowingButton__glowWrap.l {
+  left: -4px;
+}
+
+.GlowingButton__glowWrap.r {
+  right: -4px;
+}
+
+.GlowingButton__glow {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  border-radius: 14px;
+  filter: blur(15px);
+  display: block;
+  will-change: transform, filter, opacity;
+  transition: 0.6s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.GlowingButton__glowWrap.l .GlowingButton__glow {
+  background: rgb(213, 159, 255);
+}
+
+.GlowingButton__glowWrap.r .GlowingButton__glow {
+  background: rgb(117, 215, 245);
+}
+
+.GlowingButton__content {
+  overflow: hidden;
+  color: #000;
+  position: relative;
+
+  height: fit-content;
+  z-index: 3;
+}
+
+.GlowingButton__content span {
+  display: block;
+  transition: 0.5s transform cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.GlowingButton__content span:nth-child(2) {
+  position: absolute;
+}
+
+/* Hover State */
+.GlowingButton:hover .GlowingButton__content span:nth-child(1) {
+  transform: translateY(-100%);
+}
+
+.GlowingButton:hover .GlowingButton__content span:nth-child(2) {
+  transform: translateY(-100%);
+}
+
+.GlowingButton:hover .GlowingButton__glow {
+  filter: blur(20px);
+  opacity: 1;
+}

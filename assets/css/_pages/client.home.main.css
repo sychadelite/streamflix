@@ -1,0 +1,107 @@
+/* HERO */
+section>div {
+  padding-top: 5rem;
+  color: white;
+}
+
+section .hero {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  background-image: url('/assets/img/background/ID-en-20240205-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
+  background-position: center top;
+  background-size: cover;
+}
+
+section .hero .content .search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 35rem;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* SEARCH BOX */
+.pseudo-search {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 10px 16px;
+  border: 2px solid #FFF;
+  border-radius: 100px;
+  background-color: #000000ab;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.pseudo-search input {
+  width: 100%;
+  flex-grow: 1;
+  border: 0;
+  background-color: transparent;
+  color: #FFF;
+}
+
+.pseudo-search input:focus {
+  outline: none;
+}
+
+.pseudo-search input::placeholder {
+  color: #FFF;
+}
+
+.pseudo-search button,
+.pseudo-search i {
+  border: none;
+  background: none;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.pseudo-search select {
+  border: none;
+}
+
+/* JUMBOTRON */
+section .jumbotron .side-by-side {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+section .jumbotron .side-by-side .substance {
+  width: 50%;
+}
+
+section .jumbotron .side-by-side .substance .frame {
+  position: relative;
+  overflow: hidden;
+}
+
+section .jumbotron .side-by-side .substance .frame img {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+section .jumbotron .side-by-side .substance .frame .motion {
+  position: absolute;
+}
+
+section .jumbotron .side-by-side .substance .frame video {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  section .jumbotron .side-by-side {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  section .jumbotron .side-by-side .substance {
+    width: 100%;
+  }
+}
