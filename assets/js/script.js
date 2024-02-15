@@ -1,9 +1,24 @@
 $(document).ready(function () {
-  onSidebarEffect()
+  onSidebarEffect();
+  momentParse();
 });
 
 
 /* ----------------------------------------- FUNCTIONAL ----------------------------------------- */
+
+// Function to handle the parsing moment time by format
+function momentParse() {
+  $(".moment-parse").each(function () {
+    const el = $(this);
+    const time = el.data("moment-time");
+    const format = el.data("moment-format");
+
+    if (time) {
+      const parsed_time = moment(time).format(format ?? "L");
+      el.text(parsed_time);
+    }
+  })
+}
 
 // Function to handle the effect of sidebar toggle
 function onSidebarEffect() {

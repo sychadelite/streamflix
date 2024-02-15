@@ -26,8 +26,8 @@
             <ul class="dropdown">
               <li><a href="<?= base_url("client/movie/most_watched") ?>"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
               <li><a href="<?= base_url("client/movie/quality ") ?>"><i class="fas fa-caret-right me-2"></i>Quality</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>IMAX</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Marvel Cinematic Universe</a></li>
+              <li><a href="<?= base_url("client/movie/IMAX ") ?>"><i class="fas fa-caret-right me-2"></i>IMAX</a></li>
+              <li><a href="<?= base_url("client/movie/marvel_cinematic_universe ") ?>"><i class="fas fa-caret-right me-2"></i>Marvel Cinematic Universe</a></li>
             </ul>
           </li>
           <li>
@@ -38,12 +38,12 @@
             </a>
             <ul class="dropdown">
               <li><a href="<?= base_url("client/tv_series/most_watched") ?>"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Marvel studio series</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Amazon prime</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Apple TV+ series</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Disney+ series</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>HBO series</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Netflix series</a></li>
+              <li><a href="<?= base_url("client/tv_series/marvel_studio") ?>"><i class="fas fa-caret-right me-2"></i>Marvel studio series</a></li>
+              <li><a href="<?= base_url("client/tv_series/amazon_prime ") ?>"><i class="fas fa-caret-right me-2"></i>Amazon prime</a></li>
+              <li><a href="<?= base_url("client/tv_series/apple_tv ") ?>"><i class="fas fa-caret-right me-2"></i>Apple TV+ series</a></li>
+              <li><a href="<?= base_url("client/tv_series/disney_plus ") ?>"><i class="fas fa-caret-right me-2"></i>Disney+ series</a></li>
+              <li><a href="<?= base_url("client/tv_series/hbo ") ?>"><i class="fas fa-caret-right me-2"></i>HBO series</a></li>
+              <li><a href="<?= base_url("client/tv_series/netflix ") ?>"><i class="fas fa-caret-right me-2"></i>Netflix series</a></li>
             </ul>
           </li>
           <li>
@@ -54,7 +54,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<?= base_url("client/year") ?>">
               <i class="fab fa-affiliatetheme"></i>
               &nbsp;
               Year

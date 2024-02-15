@@ -28,7 +28,7 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
             <?php foreach ($content[$context]["data"] as $index => $row) { ?>
               <div class="entry">
                 <a href="#">
-                  <span><?= formatColumnName($row->genre_name) ?></span>
+                  <span><?= formatColumnName($row->YYYY) ?></span>
                 </a>
               </div>
             <?php } ?>

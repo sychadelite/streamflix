@@ -27,7 +27,7 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
           <div class="substance-movie-list">
             <?php foreach ($content["most_watched"]["data"] as $index => $row) { ?>
               <div class="pack">
-                <a href="<?= base_url("client/tv_series/stream/" . $row->content_id) ?>">
+                <a href="<?= base_url("client/stream/" . $row->content_id) ?>">
                   <div class="movie-card">
                     <div class="cover">
                       <img src="<?= base_url($row->cover_image) ?>" alt="" />
@@ -44,7 +44,7 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
                       </div>
                     </div>
                     <div class="info">
-                      <small><span class="moment-parse" data-moment-time="<?= $row->release_year ?>">N/A</span> / <?= formatColumnName($row->content_type) ?></small>
+                      <small><span class="moment-parse" data-moment-time="<?= $row->release_year ?>" data-moment-format="YYYY">N/A</span> / <?= formatColumnName($row->content_type) ?></small>
                       <h3 class="fs-5 fw-semibold text-truncate"><?= $row->title ?></h3>
                     </div>
                   </div>
@@ -66,16 +66,3 @@ $current_domain = str_replace('www.', '', $url_parts['host']);
   <div class="divider"></div>
 
 </section>
-
-<script>
-  $(document).ready(function() {
-    $(".moment-parse").each(function() {
-      const el = $(this);
-      const time = el.data("moment-time");
-      if (time) {
-        const parsed_time = moment(time).format('YYYY');
-        el.text(parsed_time);
-      }
-    })
-  })
-</script>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Most_watched extends CI_Controller
+class Stream extends CI_Controller
 {
   public $security;
   public $db;
@@ -13,11 +13,11 @@ class Most_watched extends CI_Controller
   public $form_validation;
   public $pagination;
   public $auth_model;
-  public $most_watched_model;
+  public $stream_model;
 
   private $_table = 'content';
-  private $_context = 'most_watched';
-  private $_path_prefix = 'client/tv_series/';
+  private $_context = 'stream';
+  private $_path_prefix = 'client/';
   private $_file = [];
 
   public function __construct()
@@ -31,31 +31,13 @@ class Most_watched extends CI_Controller
     $this->load->library(['form_validation', 'pagination']);
   }
 
-  public function index()
+  public function index($slug = "")
   {
+    if (!$slug) return redirect("client/home");
+
     $data = $this->page_meta_data();
 
-    $config['base_url'] = base_url($this->_path_prefix . "most_watched");
-    $config['total_rows'] = $this->most_watched_model->get_count();
-    $config['per_page'] = 12;
-    $config['use_page_numbers'] = TRUE;
-    $config['page_query_string'] = TRUE;
-
-    $config['cur_tag_open'] = '<li class="active"><a href="#">';
-    $config['cur_tag_close'] = '</a></li>';
-    $config['num_tag_open'] = '<li>';
-    $config['num_tag_close'] = '</li>';
-
-    $this->pagination->initialize($config);
-
-    $page = html_escape($this->input->get('per_page')) ?? "1";
-
-    $limit = $config['per_page'];
-    $offset = ($page - 1) * $config['per_page'];
-
-    $data["content"]["most_watched"]["links"] = '<ul class="pagination">' . $this->pagination->create_links() . '</ul>';
-
-    $data["content"]["most_watched"]["data"] = $this->most_watched_model->getAll($limit, $offset);
+    $data["content"]["stream"]["data"] = $this->stream_model->getById($slug);
 
     return $this->load->view($data["layout"], $data);
   }
