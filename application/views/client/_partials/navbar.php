@@ -47,7 +47,7 @@
             </ul>
           </li>
           <li>
-            <a href="#">
+            <a href="<?= base_url("client/genre") ?>">
               <i class="far fa-folder-open"></i>
               &nbsp;
               Genre

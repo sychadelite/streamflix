@@ -1,17 +1,19 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Genre extends CI_Controller
 {
   public $security;
   public $auth_model;
 
-  private $_context = 'home';
+  private $_context = 'genre';
   private $_path_prefix = 'client/';
 
   public function __construct()
   {
     parent::__construct();
+
+    $this->load->model($this->_path_prefix . $this->_context . '_model');
 
     $this->load->model('client/auth_model');
   }
@@ -19,6 +21,8 @@ class Home extends CI_Controller
   public function index()
   {
     $data = $this->page_meta_data();
+
+    $data["content"]["genre"]["data"] = $this->genre_model->getAll();
 
     return $this->load->view($data["layout"], $data);
   }
@@ -30,9 +34,9 @@ class Home extends CI_Controller
     $data["layout"] = 'client/_index';
     $data["page"] = $this->_path_prefix . '/' . $this->_context;
     $data["parts"] = [
-			"navbar",
-			"footer"
-		];
+      "navbar",
+      "footer"
+    ];
     $data["context"] = $this->_context;
     $data["path_prefix"] = $this->_path_prefix;
 

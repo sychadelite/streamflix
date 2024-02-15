@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
+  background-color: black;
 }
 
 .wrapper {
@@ -69,7 +70,6 @@ section>div {
   pointer-events: none;
 }
 
-/* brightness and vignette effect*/
 .overlay {
   position: absolute;
   top: 0;
@@ -109,6 +109,41 @@ section>div {
   background-color: rgb(35 35 35);
 }
 
+.entry {
+  position: relative;
+  background-color: #181818;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, .25);
+  transition: all .3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.entry:hover {
+  background-color: #2b2b2b;
+  transition: all .3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.entry a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0.4rem 0 0 0.4rem;
+  height: 100%;
+  border-left: 7px solid #282828;
+}
+
+.entry a {
+  text-decoration: none;
+  color: white;
+}
+
+.entry a span {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font-size: 21px;
+  font-weight: 500;
+  text-align: left;
+}
+
 /* Attribute */
 [aria-current="page"],
 [aria-disabled="true"]:active {
@@ -122,7 +157,7 @@ section>div {
   }
 }
 
-@media screen and (min-height: 2000px) {
+@media screen and (min-height: 1200px) {
   .wrapper {
     min-height: 100vh;
   }
