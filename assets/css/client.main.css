@@ -21,6 +21,7 @@ section .content .substance-title {
 }
 
 section .content .substance-title h1 {
+  line-height: 2.5rem;
   letter-spacing: 2px;
 }
 

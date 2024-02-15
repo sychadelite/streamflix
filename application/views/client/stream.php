@@ -26,6 +26,12 @@ $film = $content["stream"]["data"];
               <?= formatColumnName($context) . " | " . $film->title ?>
               (<span class="moment-parse" data-moment-time="<?= $film->release_year ?>" data-moment-format="YYYY">N/A</span>)
             </h1>
+            <div class="badge text-bg-warning p-2 mt-3">
+              <p class="mb-0">
+                <i class="fas fa-star"></i>
+                <?= $film->rating ?>
+              </p>
+            </div>
           </div>
           <div>
             <div>
@@ -38,15 +44,19 @@ $film = $content["stream"]["data"];
             <div class="info mt-5 fs-6 fw-light">
               <h3 class="fs-4 mb-4">Actor</h3>
               <div class="d-flex flex-wrap align-items-center" style="gap: 1rem;">
-                <?php foreach (json_decode($film->cast) as $key => $value) { ?>
-                  <div class="entry">
-                    <a href="#">
-                      <span>
-                        <small style="color: darkgray"><?= $value ?></small>
-                      </span>
-                    </a>
-                  </div>
-                <?php } ?>
+                <?php
+                if ($film->cast) :
+                  foreach (json_decode($film->cast) as $key => $value) { ?>
+                    <div class="entry">
+                      <a href="#">
+                        <span>
+                          <small style="color: darkgray"><?= $value ?></small>
+                        </span>
+                      </a>
+                    </div>
+                <?php
+                  }
+                endif; ?>
               </div>
             </div>
           </div>
@@ -66,8 +76,8 @@ $film = $content["stream"]["data"];
   $(document).ready(function() {
     resizeIframe("iframe", {
       "width": "100%",
-      "height": "70vh",
-      "max-height": "640px"
+      "height": "480px",
+      "max-height": "70vw"
     }, {
       "width": "100%"
     });
