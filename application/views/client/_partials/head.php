@@ -27,3 +27,9 @@
 <script src="<?= base_url("assets/vendor/AdminLTE/plugins/moment/moment.min.js"); ?>"></script>
 
 <script src="<?= base_url("assets/vendor/AdminLTE/plugins/toastr/toastr.min.js"); ?>"></script>
+
+<script src="<?= base_url("assets/js/formatter.js"); ?>"></script>
+
+<script src="<?= base_url("assets/js/path.js"); ?>"></script>
+
+<script src="<?= base_url("assets/js/query-params.js"); ?>"></script>

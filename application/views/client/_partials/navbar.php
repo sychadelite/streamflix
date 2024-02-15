@@ -18,20 +18,20 @@
       <div id="mainListDiv" class="main_list">
         <ul class="navlinks">
           <li>
-            <a href="#" class="pb-3">
+            <a href="<?= base_url("client/movie") ?>" class="pb-3" aria-disabled="true">
               <i class="fas fa-film"></i>
               &nbsp;
               Movie
             </a>
             <ul class="dropdown">
               <li><a href="<?= base_url("client/movie/most_watched") ?>"><i class="fas fa-caret-right me-2"></i>Most watched</a></li>
-              <li><a href="#"><i class="fas fa-caret-right me-2"></i>Quality</a></li>
+              <li><a href="<?= base_url("client/movie/quality ") ?>"><i class="fas fa-caret-right me-2"></i>Quality</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>IMAX</a></li>
               <li><a href="#"><i class="fas fa-caret-right me-2"></i>Marvel Cinematic Universe</a></li>
             </ul>
           </li>
           <li>
-            <a href="#" class="pb-3">
+            <a href="<?= base_url("client/tv_series") ?>" class="pb-3" aria-disabled="true">
               <i class="fas fa-tv"></i>
               &nbsp;
               Tv Series
@@ -86,3 +86,32 @@
     </div>
   </div>
 </nav>
+
+<script>
+  $(document).ready(function() {
+    checkActiveLink();
+  })
+
+  function checkActiveLink() {
+    const origin = window.location.origin;
+    const pathname = window.location.pathname;
+    const current_url = origin + pathname;
+    const elements = $(".nav div.main_list ul li a");
+
+    elements.each(function() {
+      const el = $(this);
+      const href = el.attr("href");
+      const cumulative_path = getCumulativePathSegments(current_url);
+
+      let escaped_cumulative_path = [];
+      cumulative_path.forEach(str => {
+        const str_no_trailing_slash = str.replace(/\/$/, "")
+        escaped_cumulative_path.push(str_no_trailing_slash)
+      });
+
+      if (escaped_cumulative_path.includes(href)) {
+        el.addClass('active');
+      }
+    })
+  }
+</script>

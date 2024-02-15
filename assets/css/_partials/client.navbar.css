@@ -77,16 +77,19 @@
   color: white;
 }
 
+.nav.affix div.main_list ul li a.active,
 .nav.affix div.main_list ul li a:hover {
-  color: #ce8900;
+  color: #ce8900 !important;
 }
 
+.nav div.main_list>ul li a.active,
 .nav div.main_list>ul li a:hover {
-  color: #ac8100;
+  color: #ac8100 !important;
 }
 
+.nav div.main_list.show_list ul li a.active,
 .nav div.main_list.show_list ul li a:hover {
-  color: #ac8100;
+  color: #ac8100 !important;
 }
 
 .nav-container {

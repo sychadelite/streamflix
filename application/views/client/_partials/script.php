@@ -7,10 +7,6 @@
   <script src="<?= base_url("assets/js/_partials/client." . $part . ".js"); ?>"></script>
 <?php } ?>
 
-<script src="<?= base_url("assets/js/formatter.js"); ?>"></script>
-
-<script src="<?= base_url("assets/js/query-params.js"); ?>"></script>
-
 <script src="<?= base_url("assets/js/overlay-scroller.js"); ?>"></script>
 
 <script src="<?= base_url("assets/js/client.js"); ?>"></script>
