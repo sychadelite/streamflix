@@ -39,3 +39,9 @@
 <script src="<?= base_url("assets/vendor/AdminLTE/plugins/inputmask/jquery.inputmask.min.js"); ?>"></script>
 
 <script src="<?= base_url("assets/vendor/AdminLTE/plugins/select2/js/select2.full.min.js"); ?>"></script>
+
+<script src="<?= base_url("assets/js/formatter.js"); ?>"></script>
+
+<script src="<?= base_url("assets/js/path.js"); ?>"></script>
+
+<script src="<?= base_url("assets/js/query-params.js"); ?>"></script>

@@ -6,9 +6,7 @@
 
 <script src="<?= base_url("assets/vendor/AdminLTE/dist/js/demo.js"); ?>"></script>
 
-<script src="<?= base_url("assets/js/formatter.js"); ?>"></script>
-
-<script src="<?= base_url("assets/js/query-params.js"); ?>"></script>
+<script src="<?= base_url("assets/js/admin.js"); ?>"></script>
 
 <script src="<?= base_url("assets/js/script.js"); ?>"></script>
 
